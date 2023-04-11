@@ -95,13 +95,13 @@ def main(size, weight, age, activity, s, type_of_diet, degree):
     return 0
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-s', '--size', type=float)
-parser.add_argument('-w', '--weight', type=float)
-parser.add_argument('-a', '--age', type=int)
-parser.add_argument('-A', '--activity', type=int)
-parser.add_argument('-S', type=str)
-parser.add_argument('-t', '--typeofdiet', type=str)
-parser.add_argument('-d', '--degree', type=str)
+parser.add_argument('-s', type=float, dest='size', help='Size of the person.')
+parser.add_argument('-w', type=float, dest='weight', help="Weight of the person.")
+parser.add_argument('-a', type=int, dest='age', help="Age of the person.")
+parser.add_argument('-A', type=int, dest='activity', help="Times per week the person does sport.")
+parser.add_argument('-S', type=str, dest='S', help="Male or Female.")
+parser.add_argument('-t', type=str, dest='typeofdiet', help="Choose the type of diet: cut or bulk.")
+parser.add_argument('-d', type=str, dest='degree', help="Choose the degree of agressivity in the diet.")
 
 if len(sys.argv) == 1:
     print(parser.print_help(), "\n")
